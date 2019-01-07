@@ -1,113 +1,57 @@
-/*============   RESET          */
+html,
+body,
+.page, .App, #root {
+  height: 100%; /* needed for proper layout */
+  padding: 0;
+  margin: 0;
+}
 
-* {
-    padding: 0;
-    margin: 0;
-    /*suppression des margin et padding de toutes les balises*/
-    box-sizing: border-box;
-    /* pour maîtriser width et flex-basis */
-    list-style: none;
-    /*suppression des puces*/
-    text-decoration: none;
-    /*suppresion des soulignements des liens*/
-    font-family: 'Lato', sans-serif;
-    color: azure;
-  }
-  
-  *::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-    }
+body {
+  overflow: hidden;
+}
 
-    *::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 30px #e1e1e1;
-        -webkit-box-shadow: inset 0 0 30px #e1e1e1;
-        border-radius: 10px;
-    }
+p {
+  margin-bottom: 1em;
+}
 
-    *::-webkit-scrollbar-track-piece {
-        box-shadow: inset 0 0 30px #e1e1e1;
-        -webkit-box-shadow: inset 0 0 30px #e1e1e1;
-        border-radius: 10px;
-    }
+.page, .App, #root {
+  display: flex;
+  flex-direction: column;
+}
 
-    *::-webkit-scrollbar-thumb {
-        box-shadow: inset 0 0 30px #e1e1e1;
-        -webkit-box-shadow: inset 0 0 30px #818181;
-        border-radius: 10px;
-    } 
-  
- 
-  .root, .App, .person-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    overflow-y: hidden;
-  }
-  
-  .person-container .person-header {
-    position: fixed;
-    width: 100%;
-    background-color: #37474f;
-    height: 66px;
-  }
-  
-  .person-container .person-scroll-container {
-    flex: 1;
-    padding: 66px 0 0 0;
-  }
- 
-  .person-container .person-scroll-container {
-    display: flex;
-    flex-flow: wrap;
-  }
-  
-  .person-container .person-scroll-container nav {
-    position: fixed;
-    z-index: 10;
-    min-width: 20%;
-    height: calc(100% - 146px);
-    background-color: #37474f;
-  }
+.page-header {
+  flex: 0 0 auto;
+  background-color: #dcdcdc;
+  height: 100px;
+}
 
-  .person-container .person-scroll-container nav a {
-    font-size: 1em;
-    text-transform: uppercase;
-  }
-  
-  .person-container .person-scroll-container nav a:hover {
+.scroll-container {
+  flex: 1 1 auto;
+  position: relative;/* need this to position inner content */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.scroll-container nav {
+  position: fixed;/* need this to position inner content */
+  overflow-y: hidden;
+  width: 200px;
+}
+
+
+.page-content {
+  position: relative;/* need this to position inner content */
+  overflow-y: auto;
+  margin-left: 200px;
+}
+
+.page-footer {
+  flex: 0 0 auto;
+  background-color: #dcdcdc;
+  height: 100px;
+}
+
+.is-current {
     background-color: #607D8B;
-  }
-  
-  .person-container .person-scroll-container .person-sections-container section {
-    flex: 1;
-    margin-left: 20%;
-    background-color: #607D8B;
-    padding: 32px;
-  }
-
-  .person-container .person-scroll-container .is-current {
-    background-color: #607D8B;
-  }
-
-  
-  /* FOOTER */
-  .person-container .person-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 5;
-    height: 80px;
-    display: flex;
-    flex-flow: column wrap;
-    background-color: #263238;
-  }
-  
-  .person-container .person-footer p {
-    flex: 1;
-    width: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center
-  }
+}
