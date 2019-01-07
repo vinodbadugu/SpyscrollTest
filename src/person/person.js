@@ -94,9 +94,9 @@ class Person extends Component {
                         </section>
                     </div>
                 </div>
-                <footer>
+                <div class="person-footer">
                     <p>Footer</p>
-                </footer>
+                </div>
             </div>
         );
     }

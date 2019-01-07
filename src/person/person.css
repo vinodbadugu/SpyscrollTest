@@ -15,62 +15,35 @@
   }
   
   *::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
+        width: 8px;
+        height: 8px;
+    }
 
-*::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 30px #e1e1e1;
-    -webkit-box-shadow: inset 0 0 30px #e1e1e1;
-    border-radius: 10px;
-}
+    *::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 30px #e1e1e1;
+        -webkit-box-shadow: inset 0 0 30px #e1e1e1;
+        border-radius: 10px;
+    }
 
-*::-webkit-scrollbar-track-piece {
-    box-shadow: inset 0 0 30px #e1e1e1;
-    -webkit-box-shadow: inset 0 0 30px #e1e1e1;
-    border-radius: 10px;
-}
+    *::-webkit-scrollbar-track-piece {
+        box-shadow: inset 0 0 30px #e1e1e1;
+        -webkit-box-shadow: inset 0 0 30px #e1e1e1;
+        border-radius: 10px;
+    }
 
-*::-webkit-scrollbar-thumb {
-    box-shadow: inset 0 0 30px #e1e1e1;
-    -webkit-box-shadow: inset 0 0 30px #818181;
-    border-radius: 10px;
-} 
-  .person-container .person-scroll-container nav {
-    background-color: #37474f;
-  }
+    *::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 30px #e1e1e1;
+        -webkit-box-shadow: inset 0 0 30px #818181;
+        border-radius: 10px;
+    } 
   
-  .person-container footer {
-    background-color: #263238;
-  }
-  
-  .person-container .person-scroll-container section {
-    background-color: #607D8B;
-    padding: 32px;
-  }
-  
-  .person-container .person-scroll-container nav a {
-    font-size: 1.5vw;
-    text-transform: uppercase;
-  }
-  
-  .person-container .person-scroll-container nav a:hover {
-    background-color: #607D8B;
-  }
-  
-  .person-container .person-scroll-container .is-current {
-    background-color: #607D8B;
-  }
-
-  
-  /* =====================================    
-   POSITIONING
-  ======================================*/
-
-  .App, .person-container {
+ 
+  .root, .App, .person-container {
     display: flex;
     flex-direction: column;
-    min-height: 600px;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
   }
   
   .person-container .person-header {
@@ -85,10 +58,6 @@
     padding: 66px 0 0 0;
   }
  
-  
-  /* =====================================    
-  MAIN + ASIDE + SECTION  LAYOUT
-  ======================================*/
   .person-container .person-scroll-container {
     display: flex;
     flex-flow: wrap;
@@ -99,16 +68,32 @@
     z-index: 10;
     min-width: 20%;
     height: calc(100% - 146px);
+    background-color: #37474f;
+  }
+
+  .person-container .person-scroll-container nav a {
+    font-size: 1em;
+    text-transform: uppercase;
+  }
+  
+  .person-container .person-scroll-container nav a:hover {
+    background-color: #607D8B;
   }
   
   .person-container .person-scroll-container .person-sections-container section {
     flex: 1;
     margin-left: 20%;
+    background-color: #607D8B;
+    padding: 32px;
+  }
+
+  .person-container .person-scroll-container .is-current {
+    background-color: #607D8B;
   }
 
   
   /* FOOTER */
-  .person-container footer {
+  .person-container .person-footer {
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -116,9 +101,10 @@
     height: 80px;
     display: flex;
     flex-flow: column wrap;
+    background-color: #263238;
   }
   
-  .person-container footer p {
+  .person-container .person-footer p {
     flex: 1;
     width: 20%;
     display: flex;
