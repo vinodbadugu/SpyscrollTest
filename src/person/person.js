@@ -12,7 +12,7 @@ class Person extends Component {
                 </div>
                 <div class="person-scroll-container">
                     <nav>
-                        <Scrollspy rootEl={'#person-sections'} items={['person-header-section', 'person-addresses-section', 'person-affiliations-section', 'person-hobbies-section', 'person-mappings-section']} currentClassName="is-current">
+                        <Scrollspy items={['person-header-section', 'person-addresses-section', 'person-affiliations-section', 'person-hobbies-section', 'person-mappings-section']} currentClassName="is-current">
                             <li><a href="#person-header-section">Person Header</a></li>
                             <li><a href="#person-addresses-section">Addresses</a></li>
                             <li><a href="#person-affiliations-section">Affiliations</a></li>
