@@ -6,31 +6,21 @@ class Person extends Component {
 
     render() {
         return (
-            <div class="app-container">
-                <header>
+            <div class="person-container">
+                <div class="person-header">
+                    <img src="" width="180" height="66" alt="LOGO" />
+                </div>
+                <div class="person-scroll-container">
                     <nav>
-                        <ul>
-                            <li><a href="#p">LOGO</a></li>
-                            <li><a href="#p1">page 1</a></li>
-                            <li><a href="#p2">page 2</a></li>
-                            <li><a href="#p3">page 3</a></li>
-                            <li><a href="#p4">page 4</a></li>
-                        </ul>
+                        <Scrollspy rootEl={'#person-sections'} items={['person-header-section', 'person-addresses-section', 'person-affiliations-section', 'person-hobbies-section', 'person-mappings-section']} currentClassName="is-current">
+                            <li><a href="#person-header-section">Person Header</a></li>
+                            <li><a href="#person-addresses-section">Addresses</a></li>
+                            <li><a href="#person-affiliations-section">Affiliations</a></li>
+                            <li><a href="#person-hobbies-section">Hobbies</a></li>
+                            <li><a href="#person-mappings-section">Person Mappings</a></li>
+                        </Scrollspy>
                     </nav>
-                </header>
-                <main>
-                    <aside>
-                        <nav>
-                            <Scrollspy items={['person-header-section', 'person-addresses-section', 'person-affiliations-section', 'person-hobbies-section', 'person-mappings-section']} currentClassName="is-current">
-                                <li><a href="#person-header-section">Person Header</a></li>
-                                <li><a href="#person-addresses-section">Addresses</a></li>
-                                <li><a href="#person-affiliations-section">Affiliations</a></li>
-                                <li><a href="#person-hobbies-section">Hobbies</a></li>
-                                <li><a href="#person-mappings-section">Person Mappings</a></li>
-                            </Scrollspy>
-                        </nav>
-                    </aside>
-                    <div>
+                    <div id="person-sections" class="person-sections-container">
                         <section id="person-header-section">
                             <h2>Person Header</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quam massa, ornare at turpis quis, varius pulvinar lorem. Morbi eleifend nisi eget viverra fermentum. Vivamus interdum dui quis orci placerat semper. Morbi lobortis ex sit amet risus cursus pharetra. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam luctus leo augue, non facilisis nunc aliquam sed. Aliquam erat volutpat. Nam laoreet cursus nunc, id tincidunt justo. Nullam elit magna, finibus at aliquam ut, blandit vel magna. Phasellus ullamcorper urna a leo luctus vestibulum. Duis posuere leo ac lectus auctor, convallis aliquam odio gravida.</p>
@@ -103,7 +93,7 @@ class Person extends Component {
                             <p>Sed porttitor turpis quis est pellentesque, in accumsan risus porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas quis elit sed felis dapibus sodales ut auctor nibh. Mauris dapibus diam in ante scelerisque ultrices. Nam tincidunt lorem vel ultricies sodales. Nullam facilisis placerat pulvinar. Nullam in arcu urna. Pellentesque tempus lorem et ligula viverra convallis. Integer id vehicula quam, sit amet dictum urna. Praesent pellentesque hendrerit risus non pharetra. In a libero finibus, hendrerit justo quis, consequat nunc. Sed iaculis efficitur nunc sagittis hendrerit. Praesent ligula augue, malesuada quis pretium semper, facilisis non quam. Phasellus ac placerat mi. Quisque ac fermentum tellus.</p>
                         </section>
                     </div>
-                </main>
+                </div>
                 <footer>
                     <p>Footer</p>
                 </footer>

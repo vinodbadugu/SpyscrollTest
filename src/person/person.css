@@ -35,185 +35,93 @@
     box-shadow: inset 0 0 30px #e1e1e1;
     -webkit-box-shadow: inset 0 0 30px #818181;
     border-radius: 10px;
-}
-
-  /*couleurs desfonds*/
-  
-  nav {
+} 
+  .person-container .person-scroll-container nav {
     background-color: #37474f;
   }
   
-  footer {
+  .person-container footer {
     background-color: #263238;
   }
   
-  section {
+  .person-container .person-scroll-container section {
     background-color: #607D8B;
     padding: 32px;
   }
   
-  aside p {
-    background-color: #90A4AE;
-    padding: 8px;
-    height: 10vh;
-  }
-  
-  nav a {
+  .person-container .person-scroll-container nav a {
     font-size: 1.5vw;
     text-transform: uppercase;
   }
-  /*=================================     POSITIONNEMENT DE LA NAV + MAIN + FOOTER
-  */
   
-  .App, .app-container {
-    display: flex;
-    /* crée un contexte flex pour ses enfants */
-    flex-direction: column;
-    /* on place les balises enfants header, main et footer verticalement*/
-    min-height: 100vh;
-    /* le body prend toute la hauteur du viewport */
+  .person-container .person-scroll-container nav a:hover {
+    background-color: #607D8B;
   }
   
-  header nav {
+  .person-container .person-scroll-container .is-current {
+    background-color: #607D8B;
+  }
+
+  
+  /* =====================================    
+   POSITIONING
+  ======================================*/
+
+  .App, .person-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 600px;
+  }
+  
+  .person-container .person-header {
     position: fixed;
     width: 100%;
+    background-color: #37474f;
+    height: 66px;
   }
   
-  main {
+  .person-container .person-scroll-container {
     flex: 1;
-    /* occupe la hauteur restante  */
-    padding: 15vh 0 0 0;
+    padding: 66px 0 0 0;
   }
-  
-  
-  
-  /*======================================  
-  LI + A 
-  =======================================*/
-  
-  
-  header ul {
-    display: flex;
-  }
-  /* crée un contexte flex pour ses enfants */
-  
-  header li {
-    flex: 1;
-    /* occupe la largeur restante  */
-  }
-  
-  a:hover {
-    background-color: #607D8B;
-  }
-  
-  .is-current {
-    background-color: #607D8B;
-  }
-  
-  header a {
-    height: 15vh;
-    display: flex;
-    /* crée un contexte flex pour centrer le contenu de la balise a */
-    justify-content: center;
-    /*alignement horizontal*/
-    align-items: center;
-    /*alignement vertical*/
-    flex: 1;
-    /*on autorise la balise a à prendre toute la place disponible*/
-  }
-  
+ 
   
   /* =====================================    
   MAIN + ASIDE + SECTION  LAYOUT
   ======================================*/
-  main {
+  .person-container .person-scroll-container {
     display: flex;
-    /* crée un contexte flex pour ses enfants */
     flex-flow: wrap;
-    /*permet de faire passer les elements enfant à la ligne (utilise pour le rwd)*/
   }
   
-  aside {
+  .person-container .person-scroll-container nav {
     position: fixed;
     z-index: 10;
     min-width: 20%;
-    height: calc(100% - 25vh);
-    /*hauteur des li : 15vh + hauteur du footer 10vh = 25vh*/
+    height: calc(100% - 146px);
   }
   
-  section {
+  .person-container .person-scroll-container .person-sections-container section {
     flex: 1;
-    /* occupe la hauteur restante  */
     margin-left: 20%;
   }
-  
-  section p {
-    margin-bottom: 32px;
-    text-align: justify;
-  }
-  
+
   
   /* FOOTER */
-  footer {
+  .person-container footer {
     position: fixed;
     bottom: 0;
     width: 100%;
     z-index: 5;
-    height: 10vh;
+    height: 80px;
     display: flex;
     flex-flow: column wrap;
   }
   
-  footer p {
+  .person-container footer p {
     flex: 1;
     width: 20%;
     display: flex;
     justify-content: center;
     align-items: center
-  }
-  
-  
-  /* =====================================     POSITIONNEMENT H1+ ARTICLE + P (à l'intérieur de ASIDE)*/
-  
-  aside {
-    display: flex;
-    flex-flow: column wrap;
-  }
-  
-  
-  aside nav {
-    display: flex;
-    /*flex-flow: column wrap;
-    flex: 1;*/
-  }
-  
-  
-  
-  aside ul {
-    flex: 1;/* occupe toute la place restante */
-    display: flex;
-    flex-flow: column wrap;
-  }
-  
-  aside li {
-    flex: 1; 
-    display: flex;
-  
-  }
-  
-  aside a {
-    flex:1;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    /*on centre horiz et vertic grace flexbox*/
-  }
-  
-  @media screen and (max-width: 940px) {
-    aside {
-      display: none;
-    }
-    section {
-      margin: 0
-    }
   }
